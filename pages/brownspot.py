@@ -14,7 +14,7 @@ def app():
 
   local_css("style/style.css")
 
-  img_sym = Image.open("../RICE DETECTION/Train_Data/Disease_Train_Data/brownspot/Brownspot__0_375.jpg")
+  img_sym = Image.open("../images/disease/Brownspot__0_375.jpg")
 
   with st.container():
     st.write("---")

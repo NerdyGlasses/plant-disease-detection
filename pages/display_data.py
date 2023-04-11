@@ -1,8 +1,8 @@
 import streamlit as st
 import requests
 import pandas as pd
-CHANNEL_ID = 2082196
-API_KEY = '7YA0K8TYZNV75DFD' #'PFGW8OODW23D08JQ'
+CHANNEL_ID = 2089276
+API_KEY = 'NJ879R5WIU5VKMIW' #Read API
 
 # Define the URL for retrieving the latest data from ThingSpeak
 url = f"https://api.thingspeak.com/channels/{CHANNEL_ID}/feeds.json?api_key={API_KEY}"

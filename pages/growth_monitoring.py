@@ -23,8 +23,8 @@ def local_css(file_name):
 local_css("style/style.css")
 
 # Define ThingSpeak channel ID and API key
-CHANNEL_ID = 2082196
-API_KEY = '7YA0K8TYZNV75DFD' #'PFGW8OODW23D08JQ'
+CHANNEL_ID =  2089276
+API_KEY = 'NJ879R5WIU5VKMIW' # Read API
 
 # Define the URL for retrieving the latest data from ThingSpeak
 url = f"https://api.thingspeak.com/channels/{CHANNEL_ID}/feeds.json?api_key={API_KEY}"
@@ -77,35 +77,6 @@ sensor = st.selectbox("Select Sensor", ["Soil Moisture", "LDR", "Temperature", "
 # Define Streamlit widget for selecting how to display the data
 chart_type = st.selectbox("Select Chart Type", ["Line Chart", "Bar Chart"])
 
-# Define Streamlit widget for selecting the time range
-# time_range = st.slider("Select Time Range (hours)", 1, 24, 6)
-
-# Use Streamlit's caching mechanism to reduce the number of API requests
-# @st.cache_resource
-# def get_data():
-  # Retrieve the latest data from ThingSpeak
-  # response = requests.get(url)
-
-  #  Parse the JSON response
-  # data = response.json()
-  # data.keys()
-  # df = pd.DataFrame(data['feeds'])
-  # # print(df)
-  # df['field1']=df['field1'].astype(float)
-  # df['field2']=df['field2'].astype(float)
-  # df['field3']=df['field3'].astype(float)
-  # df['field4']=df['field4'].astype(float)
-  # df['created_at']=df['created_at'].astype('datetime64[ns]')
-  # Return the selected sensor data
-  # if sensor == "Soil Moisture":
-  #   return df["field1"]
-  # elif sensor == "LDR":
-  #   return df["field2"]
-  # elif sensor == "Temperature":
-  #   return df["field3"]
-  # elif sensor == "Humidity":
-  #   return df["field4"]
-  
 
 # Get the data and display it based on the selected chart type
   
@@ -131,16 +102,15 @@ elif chart_type == "Bar Chart":
 #   app()
 
 if sensor == "Soil Moisture":
-  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2082196/charts/1?api_key=7YA0K8TYZNV75DFD"
+  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2089276/charts/1?api_key=NJ879R5WIU5VKMIW" 
   )
 elif sensor == "LDR":
-  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2082196/charts/2?api_key=7YA0K8TYZNV75DFD"
+  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2089276/charts/2?api_key=NJ879R5WIU5VKMIW"
   )
 elif sensor == "Temperature":
-  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2082196/charts/3?api_key=7YA0K8TYZNV75DFD"
+  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2089276/charts/3?api_key=NJ879R5WIU5VKMIW"
   ) 
-  # components.iframe(width=450, height=260,src="https://thingspeak.com/channels/2082196/widgets/620700"
-  # )
+
 elif sensor == "Humidity":
-  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2082196/charts/4?api_key=7YA0K8TYZNV75DFD"
+  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2089276/charts/4?api_key=7YA0K8TYZNV75DFD"
   )

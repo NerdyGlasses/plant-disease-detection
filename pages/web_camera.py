@@ -28,7 +28,7 @@ lottie_loader = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_Bo
 st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache_resource
 def load_model():
-    model=tf.keras.models.load_model("D:/MAJOR PROJECT/RICE DETECTION/models/plant.h5")
+    model=tf.keras.models.load_model("../models/plant.h5")
     return model
 with st.spinner('Model is being loaded..'):
   model=load_model()
@@ -57,17 +57,6 @@ def class_prediction():
     st.image(image, use_column_width=True)
     predictions = import_and_predict(image, model)
     class_names = ['Brownspot','Gudi Rotten','Healthy','Leaf Blast','Leaf Blight','Leaf Smut','Sheath Blight','Tungro']
-    # class_names = ['Tomato__Not Diseased', 'Tomato__Diseased']
-    # class_names = ['Tomato___Bacterial_spot',
-    # 'Tomato___Early_blight',
-    # 'Tomato___Healthy',
-    # 'Tomato___Late_blight',
-    # 'Tomato___Leaf_Mold',
-    # 'Tomato___Septoria_leaf_spot',
-    # 'Tomato___Spider_mites Two-spotted_spider_mite',
-    # 'Tomato___Target_Spot',
-    # 'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
-    # 'Tomato___Tomato_mosaic+_virus']
     string = "Prediction : " + class_names[np.argmax(predictions)]
     # st.success(string)
     if class_names[np.argmax(predictions)] == 'Healthy':
@@ -75,65 +64,10 @@ def class_prediction():
     else:
         st.warning(string)
 
-# def rice_preds():
-   
-    # app = MultiPage()
-    # app.st = st
-
-    # if preds == "Brownspot":
-    #   switch_page("Brownspot")
-    # elif preds == "Gudi Rotten":
-    #   switch_page("Gudi Rotten")  
-    # elif preds == "Leaf Blast":
-    #   switch_page("Leaf Blast")
-    # elif preds == "Leaf Blight":
-    #   switch_page("Leaf Blight")
-    # elif preds == "Leaf Smut":
-    #   switch_page("Leaf Smut")
-    # elif preds == "Sheath Blight":
-    #   switch_page("Sheath Blight")
-    # elif preds == "Tungro":
-    #   switch_page("Tungro")
-    # elif preds == "Healthy":
-    #   switch_page("Healthy")
-    
-    # app.run()
-
 
 if st.button('✨ Predict'):
   if file is None:
     st.text("Please upload an image file")
   else:
-    preds = class_prediction()
-    app = MultiPage()
-    app.st = st
-    # st.button("Symptoms and Solutions", on_click=rice_preds())
-    # if preds == "Brownspot":
-    #   app.add_page("Brownspot",brownspot.app)
-    #   app.run()
-    # elif preds == "Gudi Rotten":
-    #   app.add_page("Gudi Rotten",gudi_rotten.app)
-    #   app.run()  
-    # elif preds == "Leaf Blast":
-    #   app.add_page("Leaf Blast",leaf_blast.app)
-    #   app.run()
-    # elif preds == "Leaf Blight":
-    #   app.add_page("Leaf Blight",leaf_blight.app)
-    #   app.run()
-    # elif preds == "Leaf Smut":
-    #   app.add_page("Leaf Smut",leaf_smut.app)
-    #   app.run()
-    # elif preds == "Sheath Blight":
-    #   app.add_page("Sheath Blight",sheath_blight.app)
-    #   app.run()
-    # elif preds == "Tungro":
-    #   app.add_page("Tungro",tungro.app)
-    #   app.run()
-    # elif preds == "Healthy":
-    #   app.add_page("Healthy",healthy.app)
-    #   app.run()
+    class_prediction()
     
-
-
-
-
