@@ -6,11 +6,9 @@ from streamlit_lottie import st_lottie
 from streamlit_extras.switch_page_button import switch_page
 from multipage import MultiPage
 from pages import brownspot,gudi_rotten,healthy,leaf_blast,leaf_blight,leaf_smut,sheath_blight,tungro
-import streamlit.components.v1 as components
-
 
 st.set_page_config(
-  page_title= "Rice Disease Detection", page_icon="../RICE DETECTION/images/icons/favicon.ico", layout="wide",initial_sidebar_state="collapsed"
+  page_title= "Rice Disease Detection", page_icon="../images/icons/favicon.ico", layout="wide",initial_sidebar_state="collapsed"
   )
 
 st.title("Rice Disease Detection")
@@ -22,22 +20,15 @@ def load_lottieurl(url):
     return None
   return r.json()
 
-# lottie_coding = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_6g4ao6ec.json")
-
 
 lottie_farmer = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_sgn7zslb.json")
+
 #---Use local CSS
 def local_css(file_name):
   with open(file_name) as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
-
-
-# html_link = """
-#     Made by <a href="https://vanshhhhh.github.io/" style="color:green;" target="_blank">Kanchan Patil</a>
-#     """
-# st.markdown(html_link, unsafe_allow_html=True)
 
 selected = option_menu(
   menu_title=None,  #required
@@ -47,27 +38,6 @@ selected = option_menu(
   default_index=0, #optional
   orientation="horizontal",
   )
-
-
-# st.image("https://images.unsplash.com/photo-1600305659417-7747f399e28f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHxyaWNlJTIwZmllbGR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60", width=1050)
-
-# def add_bg_from_url():
-#   st.markdown(
-#     f"""
-#     <style>
-#     .stApp {{
-#       background-image: url("https://images.unsplash.com/photo-1600305659417-7747f399e28f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHxyaWNlJTIwZmllbGR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60");
-#       background-attachment: fixed;
-#       background-size: cover
-#     }}
-#     </style>
-#     """,
-#     unsafe_allow_html=True
-  # )
-
-# add_bg_from_url() 
-
-# st.image("https://images.unsplash.com/photo-1614831884597-ff157b5656f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHJpY2UlMjBmaWVsZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",  width=1050)
 
 with st.container():
   st.write("---")
