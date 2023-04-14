@@ -28,7 +28,7 @@ lottie_loader = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_Bo
 st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache_resource
 def load_model():
-    model=tf.keras.models.load_model("../models/plant.h5")
+    model=tf.keras.models.load_model("../plant-disease-detection/models/plant.h5")
     return model
 with st.spinner('Model is being loaded..'):
   model=load_model()
