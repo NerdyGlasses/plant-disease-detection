@@ -14,7 +14,7 @@ def app():
 
   local_css("style/style.css")
 
-  img_sym = Image.open("../images/disease/sheath_blight__0_23.jpg")
+  img_sym = Image.open("../plant-disease-detection/images/disease/sheath_blight__0_23.jpg")
 
   with st.container():
     st.write("---")

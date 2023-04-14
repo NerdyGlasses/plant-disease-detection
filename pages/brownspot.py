@@ -14,7 +14,7 @@ def app():
 
   local_css("style/style.css")
 
-  img_sym = Image.open("../images/disease/Brownspot__0_375.jpg")
+  img_sym = Image.open("../plant-disease-detection/images/disease/Brownspot__0_375.jpg")
 
   with st.container():
     st.write("---")
