@@ -8,7 +8,7 @@ from multipage import MultiPage
 from pages import brownspot,gudi_rotten,healthy,leaf_blast,leaf_blight,leaf_smut,sheath_blight,tungro
 
 st.set_page_config(
-  page_title= "Rice Disease Detection", page_icon="../images/icons/favicon.ico", layout="wide",initial_sidebar_state="collapsed"
+  page_title= "Rice Disease Detection", page_icon="../plant-disease-detection/images/icons/favicon.ico", layout="wide",initial_sidebar_state="collapsed"
   )
 
 st.title("Rice Disease Detection")
