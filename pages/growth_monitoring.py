@@ -112,5 +112,5 @@ elif sensor == "Temperature":
   ) 
 
 elif sensor == "Humidity":
-  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2089276/charts/4?api_key=7YA0K8TYZNV75DFD"
+  components.iframe(width=450, height=260, src="https://thingspeak.com/channels/2089276/charts/4?api_key=NJ879R5WIU5VKMIW"
   )
